@@ -9,7 +9,7 @@ import org.springframework.boot.autoconfigure.domain.EntityScan;
 public class Main {
 	
 	public static void main(String[] args) {
-		System.setProperty("server.servlet.context-path", "/thent"); 
+		System.setProperty("server.servlet.context-path", "/emprestimo"); 
 		SpringApplication.run(Main.class, args);	
 	}
 	
