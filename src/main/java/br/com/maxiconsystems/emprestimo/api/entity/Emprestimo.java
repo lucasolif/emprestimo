@@ -2,7 +2,7 @@ package br.com.maxiconsystems.emprestimo.api.entity;
 
 import java.math.BigDecimal;
 import java.time.LocalDate;
-import java.util.Objects;
+
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
@@ -18,13 +18,14 @@ public class Emprestimo {
 	private Long id;
 	private String descricao;
 	private LocalDate dataEmprestimo;
-	private Long qtdParcelas;
+	private Integer qtdParcelas;
 	private String tipoMoeda;
 	private BigDecimal cotacaoMoeda;
 	private BigDecimal valorEmprestado;
 	private BigDecimal valorTotalPagar;
 	private BigDecimal valorParcela;
-	private BigDecimal percentualJurosMensal;
+	private BigDecimal percJurosTotal;
+	private BigDecimal valorTotalJuros;
 	private BigDecimal taxaConversao;
 	
 	
@@ -45,11 +46,11 @@ public class Emprestimo {
 		this.dataEmprestimo = dataEmprestimo;
 	}
 	
-	public Long getQtdParcelas() {
+	public Integer getQtdParcelas() {
 		return qtdParcelas;
 	}
 	
-	public void setQtdParcelas(Long qtdParcelas) {
+	public void setQtdParcelas(Integer qtdParcelas) {
 		this.qtdParcelas = qtdParcelas;
 	}
 	
@@ -69,13 +70,6 @@ public class Emprestimo {
 		this.cotacaoMoeda = cotacaoMoeda;
 	}
 	
-	public BigDecimal getValorEmprestimo() {
-		return valorEmprestimo;
-	}
-	
-	public void setValorEmprestimo(BigDecimal valorEmprestimo) {
-		this.valorEmprestimo = valorEmprestimo;
-	}
 	
 	public BigDecimal getValorParcela() {
 		return valorParcela;
@@ -83,14 +77,6 @@ public class Emprestimo {
 	
 	public void setValorParcela(BigDecimal valorParcela) {
 		this.valorParcela = valorParcela;
-	}
-	
-	public BigDecimal getPercentualJurosMensal() {
-		return percentualJurosMensal;
-	}
-	
-	public void setPercentualJurosMensal(BigDecimal percentualJurosMensal) {
-		this.percentualJurosMensal = percentualJurosMensal;
 	}
 	
 	public BigDecimal getTaxaConversao() {
@@ -124,6 +110,21 @@ public class Emprestimo {
 	public void setValorTotalPagar(BigDecimal valorTotalPagar) {
 		this.valorTotalPagar = valorTotalPagar;
 	}
-	
+
+	public BigDecimal getPercJurosTotal() {
+		return percJurosTotal;
+	}
+
+	public BigDecimal getValorTotalJuros() {
+		return valorTotalJuros;
+	}
+
+	public void setPercJurosTotal(BigDecimal percJurosTotal) {
+		this.percJurosTotal = percJurosTotal;
+	}
+
+	public void setValorTotalJuros(BigDecimal valorTotalJuros) {
+		this.valorTotalJuros = valorTotalJuros;
+	}
 	
 }

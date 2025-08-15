@@ -6,6 +6,7 @@ import java.time.LocalDate;
 import jakarta.validation.Valid;
 import jakarta.validation.constraints.Email;
 import jakarta.validation.constraints.NotBlank;
+import jakarta.validation.constraints.NotNull;
 import jakarta.validation.constraints.Past;
 import jakarta.validation.constraints.PositiveOrZero;
 
@@ -16,7 +17,7 @@ public record PessoaRequest(
 	@NotBlank String genero, 
 	@Email String email, 
 	@NotBlank String contato, 
-	@NotBlank boolean status, 
+	@NotNull boolean status, 
 	@Past LocalDate dataNascimento, 
 	@PositiveOrZero BigDecimal rendaMensal,
 	@Valid EnderecoRequest endereco

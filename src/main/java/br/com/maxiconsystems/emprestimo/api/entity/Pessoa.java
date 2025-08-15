@@ -30,6 +30,10 @@ public class Pessoa {
 	private Endereco endereco;
 	
 	
+	public Pessoa() {
+	
+	}
+
 	public Long getId() {
 		return id;
 	}
